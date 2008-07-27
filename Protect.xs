@@ -62,6 +62,7 @@ import(class)
   PL_ppaddr[OP_WAIT] = MEMBER_TO_FPTR(sysprotect_op_deny);
   PL_ppaddr[OP_WAITPID] = MEMBER_TO_FPTR(sysprotect_op_deny);
   PL_ppaddr[OP_EXEC] = MEMBER_TO_FPTR(sysprotect_op_deny);
+  PL_ppaddr[OP_EXIT] = MEMBER_TO_FPTR(sysprotect_op_deny);
   PL_ppaddr[OP_SYSTEM] = MEMBER_TO_FPTR(sysprotect_op_deny);
   PL_ppaddr[OP_KILL] = MEMBER_TO_FPTR(sysprotect_op_deny);
   //? PL_ppaddr[OP_GETPPID] = MEMBER_TO_FPTR(sysprotect_op_deny);
@@ -115,7 +116,9 @@ import(class)
   PL_ppaddr[OP_GETLOGIN] = MEMBER_TO_FPTR(sysprotect_op_deny);
   PL_ppaddr[OP_SYSCALL] = MEMBER_TO_FPTR(sysprotect_op_deny);
   PL_ppaddr[OP_LOCK] = MEMBER_TO_FPTR(sysprotect_op_deny);
+#ifdef OP_THREADSV
   PL_ppaddr[OP_THREADSV] = MEMBER_TO_FPTR(sysprotect_op_deny);
+#endif
   PL_ppaddr[OP_DUMP] = MEMBER_TO_FPTR(sysprotect_op_deny);
 }
 

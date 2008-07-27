@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-use Test::More tests => 3;
+use Test::More tests => 4;
 BEGIN { use_ok('Sys::Protect') };
 
 my $rv = eval { syscall(1, 123); };
